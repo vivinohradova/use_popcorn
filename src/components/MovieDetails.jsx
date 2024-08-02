@@ -27,13 +27,15 @@ const MovieDetails = ({ selectedId, onCloseMovie, onAddWatched, watched }) => {
     Year: year,
     Poster: poster,
     Runtime: runtime,
-    imdbRating,
+    imdbRating: rating,
     Plot: plot,
     Released: released,
     Actors: actors,
     Director: director,
     Genre: genre,
   } = movie;
+
+  const imdbRating = isNaN(rating) ? "" : rating;
 
   const handleAdd = () => {
     const newWatchedMovie = {
